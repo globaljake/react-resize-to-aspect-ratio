@@ -5,8 +5,10 @@ A react component that tracks if an element has changed size (a react wrapper fo
 
 Example Use:
 
+```jsx
 <Resize aspectRatio="16:9">
   <div style={{ width: '100%' }}>
     Hello World
   </div>
 </Resize>
+```
