@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/globaljake/react-resize-to-aspect-ratio#readme",
   "dependencies": {
-    "element-resize-event": "^2.0.7"
+    "element-resize-event": "^2.0.7",
+    "react": "^15.4.2"
   }
 }
