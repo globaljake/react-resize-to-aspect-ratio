@@ -1,6 +1,8 @@
 # react-resize-to-aspect-ratio
 
-A react component that tracks if an element has changed size (a react wrapper for element-resize-event). Also it can resizes height/width to match aspect ratio
+A react wrapper for [link](https://github.com/KyleAMathews/element-resize-event "element-resize-event") PLUS MORE!
+
+A react component that tracks if an element has changed and can resize height to match aspect ratio.
 
 
 Example Use:
