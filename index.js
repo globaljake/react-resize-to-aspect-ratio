@@ -16,7 +16,7 @@ export class Resize extends Component {
 
   componentDidMount() {
     const { onChange = () => {} } = this.props;
-    const element = document.querySelector('#resize');
+    const element = this.wrap;
     this.setState({ element });
     this.scaleToAspectRatio(element);
     elementResizeEvent(element, (event) => {
@@ -50,7 +50,7 @@ export class Resize extends Component {
   render() {
     const { aspectRatio, style = {}, ...rest } = this.props;
     return (
-      <div id="resize" style={{ width: '100%', ...style }} {...rest}>
+      <div style={{ width: '100%', ...style }} {...rest} ref={(c) => { this.wrap = c;}}>
         {this.props.children}
       </div>
     );
