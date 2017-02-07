@@ -1,1 +1,4 @@
-{ "presets": ["babili", "latest", "react"] }
+{
+  "presets": ["babili", "latest", "react"],
+  "plugins": ["transform-object-rest-spread"]
+}
