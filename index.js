@@ -1,23 +1,27 @@
 import React, { Component, PropTypes } from 'react';
 import elementResizeEvent from 'element-resize-event';
 
+
 export class Resize extends Component {
 
   constructor(props) {
     super(props);
 
-    this.changeHeight = this.changeHeight.bind(this);
-    this.aspectRatioMultiplier = this.aspectRatioMultiplier.bind(this);
-    this.scaleToAspectRation = this.scaleToAspectRation.bind(this);
+    this.state = {
+      element: null,
+    }
+
+    this.scaleToAspectRatio = this.scaleToAspectRatio.bind(this);
   }
 
   componentDidMount() {
     const { onChange = () => {} } = this.props;
     const element = document.querySelector('#resize');
-    this.scaleToAspectRation(element);
+    this.setState({ element });
+    this.scaleToAspectRatio(element);
     elementResizeEvent(element, (event) => {
       onChange(element, event);
-      this.scaleToAspectRation(element);
+      this.scaleToAspectRatio(element);
     });
   }
 
@@ -31,7 +35,8 @@ export class Resize extends Component {
     return ratioValues[1] / ratioValues[0];
   }
 
-  scaleToAspectRation(element) {
+  scaleToAspectRatio(el) {
+    const element = el || this.state.element;
     const { aspectRatio } = this.props;
     const arm = this.aspectRatioMultiplier(aspectRatio);
     if (!arm) return;
