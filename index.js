@@ -5,7 +5,7 @@ export class Resize extends Component {
 
   constructor(props) {
     super(props);
-    
+
     this.changeHeight = this.changeHeight.bind(this);
     this.aspectRatioMultiplier = this.aspectRatioMultiplier.bind(this);
     this.scaleToAspectRation = this.scaleToAspectRation.bind(this);
@@ -21,7 +21,8 @@ export class Resize extends Component {
     });
   }
 
-  aspectRatioMultiplier(ratio = '') {
+  aspectRatioMultiplier(ratio) {
+    if (!ratio) return 0;
     if ((ratio.match(/:/g) || []).length !== 1) {
       console.log('invalid aspect ratio');
       return 0;
@@ -39,12 +40,12 @@ export class Resize extends Component {
 
   changeHeight(element, val) {
     element.style.height = `${val}px`;
-    console.log(`${val}px`);
   }
 
   render() {
+    const { aspectRatio, style = {}, ...rest } = this.props;
     return (
-      <div id="resize" style={{ width: '100%' }}>
+      <div id="resize" style={{ width: '100%', ...style }} {...rest}>
         {this.props.children}
       </div>
     );
@@ -55,9 +56,9 @@ export class Resize extends Component {
 Resize.propTypes = {
   children: PropTypes.node.isRequired,
   aspectRatio: PropTypes.string,
+  style: PropTypes.object,
   onChange: PropTypes.func,
 };
 
 
 export default Resize;
-
