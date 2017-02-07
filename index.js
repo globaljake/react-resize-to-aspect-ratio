@@ -21,7 +21,7 @@ export class Resize extends Component {
     });
   }
 
-  aspectRatioMultiplier(ratio) {
+  aspectRatioMultiplier(ratio = '') {
     if ((ratio.match(/:/g) || []).length !== 1) {
       console.log('invalid aspect ratio');
       return 0;
