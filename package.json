@@ -2,9 +2,10 @@
   "name": "react-resize-to-aspect-ratio",
   "version": "1.0.0",
   "description": "A react component that tracks if an element has changed size (a react wrapper for element-resize-event). Also it can resizes height/width to match aspect ratio",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "js": "babel index.js --out-file dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,11 @@
   "dependencies": {
     "element-resize-event": "^2.0.7",
     "react": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-babili": "0.0.10",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.22.0"
   }
 }
