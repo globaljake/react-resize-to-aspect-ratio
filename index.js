@@ -5,10 +5,7 @@ export class Resize extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      element: null,
-    };
-
+    
     this.changeHeight = this.changeHeight.bind(this);
     this.aspectRatioMultiplier = this.aspectRatioMultiplier.bind(this);
     this.scaleToAspectRation = this.scaleToAspectRation.bind(this);
