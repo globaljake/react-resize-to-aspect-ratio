@@ -1,6 +1,6 @@
 {
   "name": "react-resize-to-aspect-ratio",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A react component that tracks if an element has changed size (a react wrapper for element-resize-event). Also it can resizes height/width to match aspect ratio",
   "main": "dist/index.js",
   "scripts": {
